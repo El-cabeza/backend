@@ -25,7 +25,7 @@ const usersController = new UsersController()
 
 Route.group(() => {
   Route.get('/', async () => {
-    return { hello: 'world' }
+    return { status: 'Success deploy in heroku' }
   })
 
   Route.post('/createUser', usersController.store)
