@@ -23,11 +23,10 @@ import UsersController from '../app/Controllers/Http/UsersController'
 
 const usersController = new UsersController()
 
+Route.get('/', async () => {
+  return { status: 'Success deploy in heroku' }
+})
 Route.group(() => {
-  Route.get('/', async () => {
-    return { status: 'Success deploy in heroku' }
-  })
-
   Route.post('/createUser', usersController.store)
   Route.post('/login', usersController.login)
 }).prefix('api')
